@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 17:52:31 by bahaas            #+#    #+#             */
-/*   Updated: 2021/06/03 18:11:20 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 20:07:25 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int ac, char **av)
 {
 	if (ac == 1)
-  		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+  		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 	{
 		int i = 1;
