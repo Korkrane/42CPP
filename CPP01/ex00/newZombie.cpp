@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieClass.hpp                                    :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 21:39:28 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/21 21:44:12 by bahaas           ###   ########.fr       */
+/*   Created: 2021/07/21 21:39:46 by bahaas            #+#    #+#             */
+/*   Updated: 2021/07/22 13:07:50 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_HPP
-#define ZOMBIE_CLASS_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <string>
-#include <iomanip>
-
-class Zombie
+Zombie *newZombie(std::string name)
 {
-	public:
-		Zombie(void);
-		~Zombie(void);
-		void announce(void);
-	private:
-		std::string name;
-};
-
-#endif
+	Zombie *zombie = new Zombie(name);
+	return zombie;
+}

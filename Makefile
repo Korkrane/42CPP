@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/07/21 21:19:52 by bahaas           ###   ########.fr        #
+#    Updated: 2021/07/22 13:09:19 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ OBJS = ${SRCS:.cpp=.o}
 .c.o: 
 			@${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.cpp=.o}
 
-all:		accounts
+all:		${NAME}
 
-accounts:	${OBJS}
+${NAME}:	${OBJS}
 			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 			
 clean:		
