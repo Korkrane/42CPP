@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhonebookClass.hpp                                 :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:35:34 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/21 19:24:23 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/03 11:39:20 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-#define PHONEBOOK_CLASS_HPP
+#include "Phonebook.hpp"
 
-#include "ContactClass.hpp"
-
-class Phonebook
+Phonebook::Phonebook(void)
 {
-	public:
-		Phonebook(void);
-		~Phonebook(void);
-		Contact contacts[8];
-	private:
-};
+	return;
+}
 
-#endif
+Phonebook::~Phonebook(void)
+{
+	return;
+}

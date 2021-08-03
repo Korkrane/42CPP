@@ -6,15 +6,15 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/07/21 19:37:26 by bahaas           ###   ########.fr        #
+#    Updated: 2021/08/03 11:38:34 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = main.cpp utils.cpp ContactClass.cpp PhonebookClass.cpp \
+SRCS = main.cpp utils.cpp Contact.cpp Phonebook.cpp 
 
-HEADER = main.hpp ContactClass.hpp PhonebookClass.hpp
+HEADER = main.hpp Phonebook.hpp Contact.hpp
 
 CC = clang++
 
@@ -25,9 +25,9 @@ OBJS = ${SRCS:.cpp=.o}
 .c.o: 
 			@${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.cpp=.o}
 
-all:		phonebook
+all:		${NAME}
 
-phonebook:	${OBJS}
+${NAME}:	${OBJS}
 			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 			
 clean:		

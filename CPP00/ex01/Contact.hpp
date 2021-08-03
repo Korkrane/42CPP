@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactClass.hpp                                   :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:35:47 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/21 19:23:33 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/03 11:39:41 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-#define CONTACT_CLASS_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
 
