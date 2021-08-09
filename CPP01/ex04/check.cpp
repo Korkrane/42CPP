@@ -6,13 +6,13 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 17:59:11 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/22 18:04:11 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/09 22:48:59 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-static int display_error(std::string mssg)
+int display_error(std::string mssg)
 {
 	std::cout << mssg << std::endl;
 	return (0);
@@ -32,9 +32,9 @@ int check_strings(std::string s1, std::string s2)
 	return (1);
 }
 
-int check_file(std::ifstream &filein, std::ofstream &fileout)
+int check_file(std::ifstream &filein)
 {
-	if(!filein.is_open() || !fileout.is_open())
+	if(!filein.is_open())
 		return(display_error("Error: One of the file couldn't open"));
 	return (1);
 }

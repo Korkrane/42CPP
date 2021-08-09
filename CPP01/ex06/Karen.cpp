@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 18:09:34 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/22 19:51:13 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/09 23:11:00 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,27 @@ Karen::~Karen()
 void Karen::complain(std::string level)
 {
 	void	(Karen::*picked_level[5])();
-	std::string available_level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int i;
-	for(i = 0; i < 4; i++)
-		if(level == available_level[i])
-			break;
 	picked_level[0] = &Karen::debug;
 	picked_level[1] = &Karen::info;
 	picked_level[2] = &Karen::warning;
 	picked_level[3] = &Karen::error;
 	picked_level[4] = &Karen::unknown;
+
+	std::string available_level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i;
+	for(i = 0; i < 4; i++)
+		if(level == available_level[i])
+			break;
 	switch(i)
 	{
 		case 0:		(this->*picked_level[0])();
 		case 1:		(this->*picked_level[1])();
 		case 2:		(this->*picked_level[2])();
 		case 3: 	(this->*picked_level[3])(); 
-		case 4: 	(this->*picked_level[4])(); 
+		default: 	if(i <= 3)
+						break;
+					(this->*picked_level[4])(); 
+					
 	}
 }
 

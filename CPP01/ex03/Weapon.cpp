@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:16:09 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/22 16:25:24 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/09 22:36:24 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::~Weapon()
 
 const std::string &Weapon::getType()
 {
-	return (this->type);
+	return this->type;
 }
 
 void Weapon::setType(std::string type)
