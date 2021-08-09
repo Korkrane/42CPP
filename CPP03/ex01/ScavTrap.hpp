@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 14:10:33 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 16:19:23 by bahaas           ###   ########.fr       */
+/*   Created: 2021/08/09 16:22:53 by bahaas            #+#    #+#             */
+/*   Updated: 2021/08/09 16:45:33 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : virtual public ClapTrap
 {
-	ClapTrap one("foo");
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string new_name);
+		~ScavTrap(void);
+		ScavTrap(ScavTrap const &src);
+		ScavTrap &operator=(ScavTrap const &rhs);
+		
+		void guardGate();
+	private:
+};
 
-	one.attack("bar");
-	one.attack("bar");
-	one.attack("bar");
-	one.takeDamage(5);
-	one.beRepaired(5);
-	one.attack("bar");
-	one.takeDamage(10);
-}
-
+#endif

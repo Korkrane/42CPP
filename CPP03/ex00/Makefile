@@ -6,11 +6,11 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/08/06 15:05:06 by bahaas           ###   ########.fr        #
+#    Updated: 2021/08/09 16:22:22 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = accounts
+NAME = claptrap
 
 SRCS = ClapTrap.cpp main.cpp
 

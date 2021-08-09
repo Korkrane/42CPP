@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 14:10:33 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 16:19:23 by bahaas           ###   ########.fr       */
+/*   Created: 2021/08/09 19:15:22 by bahaas            #+#    #+#             */
+/*   Updated: 2021/08/09 19:44:29 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main()
+class DiamondTrap : public FragTrap, public ScavTrap
 {
-	ClapTrap one("foo");
+	public:
+		DiamondTrap(void);
+		DiamondTrap(std::string new_name);
+		~DiamondTrap(void);
+		DiamondTrap(DiamondTrap const &src);
+		DiamondTrap &operator=(DiamondTrap const &rhs);
+		
+		void whoAmI(void);
+	private:
+		std::string name;
+};
 
-	one.attack("bar");
-	one.attack("bar");
-	one.attack("bar");
-	one.takeDamage(5);
-	one.beRepaired(5);
-	one.attack("bar");
-	one.takeDamage(10);
-}
-
+#endif

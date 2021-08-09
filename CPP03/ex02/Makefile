@@ -6,15 +6,15 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/07/22 13:09:19 by bahaas           ###   ########.fr        #
+#    Updated: 2021/08/09 19:13:10 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = accounts
+NAME = claptrap
 
-SRCS = Account.cpp tests.cpp
+SRCS = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 
-HEADER = Account.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 CC = clang++
 

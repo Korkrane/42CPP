@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 14:10:17 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 16:20:32 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/09 16:48:33 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 ClapTrap::ClapTrap(std::string new_name) : name(new_name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default Claptrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	*this = src;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Claptrap Assignation operator called" << std::endl;
 	if(this != &rhs)
 	{
 		this->name = rhs.name;
@@ -68,5 +68,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
