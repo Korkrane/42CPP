@@ -6,28 +6,27 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 15:00:23 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/03 15:03:05 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/11 15:27:40 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : n(0)
 {
-	this->n = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->n = n << Fixed::bits;
+	this->n = n << this->bits;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->n = roundf(n * (1 << Fixed::bits));
+	this->n = roundf(n * (1 << this->bits));
 }
 
 Fixed::Fixed(Fixed const & src)
@@ -46,13 +45,13 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 
 float Fixed::toFloat(void) const
 {
-	float res = (float)(this->n) / (1 << Fixed::bits); 
+	float res = (float)(this->n) / (1 << this->bits); 
 	return res;
 }
 
 int Fixed::toInt(void) const
 {
-	int res = (int)(this->n) / (1 << Fixed::bits);
+	int res = (int)(this->n) / (1 << this->bits);
 	return res;
 }
 

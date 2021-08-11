@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 15:00:28 by bahaas            #+#    #+#             */
-/*   Updated: 2021/07/23 15:47:17 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/11 17:37:22 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int main(void)
 {
 	Fixed a;			//default call
-	Fixed b(a);			//copy constructor (has to set his n by calling his src.get) = nouvelle instance
+	Fixed b(a);			//copy constructor = new instance
 	Fixed c;
 
-	c = b;				//assignation operator (has to set his n by calling his rhs) = maj de l'instance courante
+	c = b;				//assignation operator (has to set his n by calling his rhs) = update current instance
 
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;

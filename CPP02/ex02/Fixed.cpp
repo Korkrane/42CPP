@@ -6,53 +6,55 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 15:00:23 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/03 15:03:05 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/08/11 17:34:05 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+//CONSTRUCTOR & DESTRUCTOR 
+//
+Fixed::Fixed(void) : n(0)
 {
-	this->n = 0;
-	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::~Fixed()
+{
 }
 
 Fixed::Fixed(const int n)
 {
-	std::cout << "Int constructor called" << std::endl;
-	this->n = n << Fixed::bits;
+	this->n = n << this->bits;
 }
 
 Fixed::Fixed(const float n)
 {
-	std::cout << "Float constructor called" << std::endl;
-	this->n = roundf(n * (1 << Fixed::bits));
+	this->n = roundf(n * (1 << this->bits));
 }
 
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed &Fixed::operator=(Fixed const &rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
 		this->n = rhs.getRawBits();
 	return *this;
 }
 
+//MEMBER FUNCTIONS
+
 float Fixed::toFloat(void) const
 {
-	float res = (float)(this->n) / (1 << Fixed::bits); 
+	float res = (float)(this->n) / (1 << this->bits); 
 	return res;
 }
 
 int Fixed::toInt(void) const
 {
-	int res = (int)(this->n) / (1 << Fixed::bits);
+	int res = (int)(this->n) / (1 << this->bits);
 	return res;
 }
 
@@ -63,8 +65,57 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->n = raw;
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if(a.n < b.n)
+		return a;
+	return b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if(a.n > b.n)
+		return a;
+	return b;
+}
+
+Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if(a.n < b.n)
+		return a;
+	return b;
+}
+
+Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if(a.n > b.n)
+		return a;
+	return b;
+}
+
+//OPERATOR OVERLOADS
+
+Fixed Fixed::operator+(Fixed const &rhs)
+{
+	return Fixed(toFloat() + rhs.toFloat());
+}
+
+Fixed Fixed::operator-(Fixed const &rhs)
+{
+	return Fixed(toFloat() - rhs.toFloat());
+}
+
+Fixed Fixed::operator*(Fixed const &rhs)
+{
+	return Fixed(toFloat() * rhs.toFloat());
+}
+
+Fixed Fixed::operator/(Fixed const &rhs)
+{
+	return Fixed(toFloat() / rhs.toFloat());
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
@@ -73,7 +124,62 @@ std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
 	return o;
 }
 
-Fixed::~Fixed()
+//INCREMENT AND DECREMENT OPERATORS
+
+Fixed &Fixed::operator++()
 {
-	std::cout << "Destructor called" << std::endl;
+	this->n++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	++*this;
+	return tmp;
+}
+
+Fixed &Fixed::operator--()
+{
+	this->n--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	--*this;
+	return tmp;
+}
+
+//COMPARISON OPERATORS
+
+bool Fixed::operator>(Fixed const &rhs)
+{
+	return(this->n > rhs.n);
+}
+
+bool Fixed::operator>=(Fixed const &rhs)
+{
+	return(this->n >= rhs.n);
+}
+
+bool Fixed::operator<(Fixed const &rhs)
+{
+	return(this->n < rhs.n);
+}
+
+bool Fixed::operator<=(Fixed const &rhs)
+{
+	return(this->n <= rhs.n);
+}
+
+bool Fixed::operator==(Fixed const &rhs)
+{
+	return(this->n == rhs.n);
+}
+
+bool Fixed::operator!=(Fixed const &rhs)
+{
+	return(this->n != rhs.n);
 }
