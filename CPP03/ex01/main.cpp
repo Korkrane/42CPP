@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 14:10:33 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 16:50:57 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/06 13:29:01 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
 
 	ScavTrap two("Scav");
 
+	two.attack("foo");
 	two.guardGate();
 }
 

@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/08/09 16:47:48 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/06 13:41:02 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEADER = ClapTrap.hpp ScavTrap.hpp
 
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -std=c++98
 
 OBJS = ${SRCS:.cpp=.o}
 

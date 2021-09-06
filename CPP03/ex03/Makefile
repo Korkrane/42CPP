@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/08/09 19:26:27 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/06 13:42:54 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEADER = ClapTrap.hpp ScavTrap.hpp DiamondTrap.hpp FragTrap.hpp
 
 CC = clang++
 
-CFLAGS = -g -Wextra -Werror -Wall -Wshadow -Wno-shadow
+CFLAGS = -g -Wextra -Werror -Wall -std=c++98 -Wshadow -Wno-shadow
 
 OBJS = ${SRCS:.cpp=.o}
 
