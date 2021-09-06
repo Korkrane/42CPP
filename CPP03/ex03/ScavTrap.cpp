@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 16:22:53 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 16:49:02 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/06 14:00:06 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
 		this->attackDamage = rhs.attackDamage;
 	}
 	return *this;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+	std::cout << "ClapTrap " << this->name << " attacks " << target <<
+	", causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 19:15:22 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 19:44:29 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/06 13:50:07 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap(DiamondTrap const &src);
 		DiamondTrap &operator=(DiamondTrap const &rhs);
 		
+		void attack(const std::string &target);
 		void whoAmI(void);
 	private:
 		std::string name;

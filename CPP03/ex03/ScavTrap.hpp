@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 16:22:53 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 16:45:33 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/06 13:56:25 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap(ScavTrap const &src);
 		ScavTrap &operator=(ScavTrap const &rhs);
 		
+		virtual void attack(const std::string &target);
 		void guardGate();
 	private:
 };
