@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:42 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/09 14:00:54 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/09 16:19:53 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+class Bureaucrat;
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -29,6 +31,7 @@ class Bureaucrat
 		std::string getName() const;
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form &form);
 
 		class GradeTooHighException : public std::exception
 		{

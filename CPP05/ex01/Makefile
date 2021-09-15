@@ -6,15 +6,15 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/09 13:58:59 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/09 16:17:30 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucrat
 
-SRCS = Bureaucrat.cpp main.cpp
+SRCS = Bureaucrat.cpp Form.cpp main.cpp
 
-HEADER = Bureaucrat.hpp
+HEADER = Bureaucrat.hpp Form.hpp
 
 CC = clang++
 
