@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:43 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/09 16:47:31 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/15 15:17:38 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Bureaucrat::Bureaucrat()
 
 Bureaucrat::Bureaucrat(std::string name, int grade): name(name)
 {
-	std::cout << "Bureaucrat constructor called" << std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
@@ -80,12 +79,12 @@ std::string Bureaucrat::getName() const
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Exception: Grade too High");
+	return ("Exception: Bureaucrat's grade too High");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Exception: Grade too Low");
+	return ("Exception: Bureaucrat's grade too Low");
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &bureaucrat)
@@ -98,17 +97,17 @@ void Bureaucrat::signForm(Form &form)
 {
 	if (form.getSigned())
 	{
-		std::cout << form.getName() << " is already signed." << std::endl;
+		std::cout << "<" << form.getName() << ">" << " is already signed." << std::endl;
 		return;
 	}
 	else if (this->grade > form.getGradeSign())
 	{
-		std::cout <<  "<" <<this->name << ">" << " cannot sign " << form.getName() << " because his grade is too low." << std::endl;
+		std::cout <<  "<" <<this->name << ">" << " cannot sign " << "<" << form.getName() << ">" << " because his grade is too low." << std::endl;
 		return;
 	}
 	else
 	{
-		std::cout << "<" << this->name << ">" << " signs " << form.getName() << std::endl;
+		std::cout << "<" << this->name << ">" << " signs " <<  "<" << form.getName() << ">" << std::endl;
 		form.beSigned(*this);
 	}
 }
