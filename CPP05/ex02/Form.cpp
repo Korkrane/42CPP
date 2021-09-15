@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:43 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/09 16:48:44 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/15 15:46:23 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ Form::Form(): gradeSign(0), gradeExecute(0), name("")
 
 Form::Form(std::string name, int sign, int execute): name(name), gradeSign(sign), gradeExecute(execute), isSigned(false)
 {
-	std::cout << "Form constructor called" << std::endl;
+	if (sign < 1 || execute < 1)
+		throw Form::GradeTooHighException();
+	if (sign > 150 || execute > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(Form const &src): name(src.name), gradeSign(src.gradeSign), gradeExecute(src.gradeExecute)
@@ -70,12 +73,17 @@ bool Form::getSigned() const
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return ("Exception: Grade too High");
+	return ("Exception: Forms's grade too High");
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return ("Exception: Grade too Low");
+	return ("Exception: Form's grade too Low");
+}
+
+const char *Form::NotSignedException::what() const throw()
+{
+	return ("Exception: Form's isn't signed");
 }
 
 void Form::beSigned(Bureaucrat &bureaucrat)
