@@ -6,19 +6,19 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/07/22 13:09:19 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/20 19:35:57 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = accounts
+NAME = materia
 
-SRCS = Account.cpp tests.cpp
+SRCS = Character.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 
-HEADER = Account.hpp
+HEADER = Character.hpp AMateria.hpp Cure.hpp Ice.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
 
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -g
 
 OBJS = ${SRCS:.cpp=.o}
 

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 19:54:39 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 21:04:11 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/20 15:22:08 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+	delete realwrongcat;
 	delete wronganimal;
 	delete wrongcat;
 	return 0;

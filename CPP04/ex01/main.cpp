@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 19:54:39 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 21:19:07 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/20 16:26:39 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,25 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Brain.hpp"
+#include <cstdlib>
 
 int main()
 {
 	int total = 8;
-	Animal* Animals[total];
+	Animal* animals[total];
 
 	for(int i = 0; i < total; i++)
 	{
 		if(i < total / 2)
-			Animals[i] = new Dog();
+			animals[i] = new Dog();
 		else
-			Animals[i] = new Cat();
+			animals[i] = new Cat();
 	}
-
 	for(int i = 0; i < total; i++)
-	{
-		delete Animals[i];
-	}
+		delete animals[i];
+
+	std::cout << "-------------" << std::endl;
+	Dog dog;
+	Dog copy = dog;
 	return 0;
 }
