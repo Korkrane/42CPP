@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:38:39 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 19:56:33 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/22 13:46:02 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,11 @@ Cure::Cure(std::string const & type) : AMateria("cure")
 Cure::Cure(Cure const &src) : AMateria(src)
 {
 	std::cout << "Cure Copy constructor called" << std::endl;
-	*this = src;
 }
 
-Cure &Cure::operator=(Cure const &rhs)
+Cure &Cure::operator=(Cure const &src)
 {
 	std::cout << "Cure Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
 	return *this;
 }
 
@@ -43,7 +40,7 @@ Cure::~Cure()
 
 AMateria *Cure::clone() const
 {
-	return new Cure(this->type);
+	return new Cure(*this);
 }
 
 void Cure::use(ICharacter& target)

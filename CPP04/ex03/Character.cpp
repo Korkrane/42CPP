@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:41:31 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 17:45:58 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/22 14:01:11 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,19 @@ Character::Character(std::string name) : name(name)
 Character::Character(Character const &src)
 {
 	std::cout << "Character Copy constructor called" << std::endl;
-	for(int i = 0; i < 4; i++)
-		this->inventory[i] = NULL;
-	*this = src;
+	this->name = src.name;
+	for (int i = 0; i < 4; i++)
+		if (!this->inventory[i])
+			this->equip(src.inventory[i]->clone());
 }
 
-Character &Character::operator=(Character const &rhs)
+Character &Character::operator=(Character const &src)
 {
 	std::cout << "Character Assignation operator called" << std::endl;
-	if(this != &rhs)
-	{
-	}
+		this->name = src.name;
+		for (int i = 0; i < 4; i++)
+			if (!this->inventory[i])
+				this->inventory[i] = src.inventory[i]->clone();
 	return *this;
 }
 
@@ -81,4 +83,6 @@ void Character::use(int idx, ICharacter& target)
 {
 	if((idx >= 0 && idx <= 3) && this->inventory[idx])
 		this->inventory[idx]->use(target);
+	else
+		std::cout << "* Can't use materias you don't own *" << std::endl;
 }

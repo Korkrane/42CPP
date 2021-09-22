@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:38:38 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 19:51:42 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/22 13:45:55 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ Ice::Ice(Ice const &src): AMateria(src)
 	std::cout << "Ice Copy constructor called" << std::endl;
 }
 
-Ice &Ice::operator=(Ice const &rhs)
+Ice &Ice::operator=(Ice const &src)
 {
 	std::cout << "Ice Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
 	return *this;
 }
 
