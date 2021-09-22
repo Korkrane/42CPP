@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 17:45:01 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 18:21:29 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/22 15:00:24 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ Convertor::Convertor(Convertor const &src)
 	*this = src;
 }
 
-Convertor &Convertor::operator=(Convertor const &rhs)
+Convertor &Convertor::operator=(Convertor const &src)
 {
 	std::cout << "Convertor Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->value = rhs.value;
+	if(this != &src)
+		this->value = src.value;
 	return *this;
 }
 
