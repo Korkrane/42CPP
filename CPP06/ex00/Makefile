@@ -6,15 +6,15 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/07/22 13:09:19 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/22 15:33:42 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = accounts
+NAME = convertor
 
-SRCS = Account.cpp tests.cpp
+SRCS =  main.cpp Convertor.cpp
 
-HEADER = Account.hpp
+HEADER = Convertor.hpp
 
 CC = clang++
 
