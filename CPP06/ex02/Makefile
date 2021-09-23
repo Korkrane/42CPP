@@ -6,15 +6,15 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/23 16:04:19 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/23 17:33:08 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convertor
+NAME = identify
 
-SRCS =  main.cpp conversion.cpp
+SRCS =  main.cpp Base.cpp A.cpp B.cpp C.cpp
 
-HEADER = Convertor.hpp
+HEADER = Base.hpp A.hpp B.hpp C.hpp 
 
 CC = clang++
 
