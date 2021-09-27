@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:25:33 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/23 21:33:09 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/27 15:02:54 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Array
 };
 
 template<typename T>
-Array<T>::Array(void) : _size(0), arr(NULL)
+Array<T>::Array(void) : _size(0), arr(new T[0])
 {
 	std::cout << "Array default constructor called" << std::endl;
 }
@@ -50,7 +50,7 @@ template<typename T>
 Array<T>::Array(Array const &src)
 {
 	std::cout << "Array copy constructor called" << std::endl;
-	this->arr = new T[src.size()];
+	this->arr = new T[src.size()]();
 	for(int i = 0; i < src.size(); i++)
 		this->arr[i] = src.arr[i];
 	this->_size = src.size();
@@ -75,7 +75,7 @@ Array<T>	&Array<T>::operator=(Array const &src)
 template<typename T>
 T&	Array<T>::operator[](int index)
 {
-	if(index < 0 || index > this->size())
+	if(index < 0 || index >= this->size())
 		throw std::exception();
 	return this->arr[index];
 }

@@ -6,12 +6,12 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:25:58 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/23 21:48:20 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/27 15:22:55 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
-#define MAX_VAL 20
+#define MAX_VAL 10
 
 int main(int, char**)
 {
@@ -29,20 +29,36 @@ int main(int, char**)
 
 	for (int i = 0; i < MAX_VAL; i++)
 	{
-				std::cout << i << " " << numbers[i] << " " << mirror[i] << " " << tmp[i] << std::endl;
+		std::cout << i << " numbers: " << numbers[i] << " mirror:" << mirror[i] << " tmp:" << tmp[i] << " test: " << test[i] << std::endl;
 		if (mirror[i] != numbers[i])
 		{
 			std::cerr << "didn't save the same value!!" << std::endl;
 			return 1;
 		}
 	}
+
+
+    std::cout << "--- Check array affect after assignation test & numbers and +1 ---" << std::endl;
+    test = numbers; 
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+        test[i] += 1;
+		std::cout << i << " numbers: " << numbers[i] << " test: " << test[i] << std::endl;
+    }
+
+
+    std::cout << "--- Check array affect after test modification ---" << std::endl;
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+        test[i] = 42;
+		std::cout << i << " tmp: " << tmp[i] << " test: " << test[i] << std::endl;
+    }
 	try
 	{
 		numbers[-2] = 0;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << "plop" << std::endl;
 		std::cerr << e.what() << '\n';
 	}
 	try
@@ -51,8 +67,6 @@ int main(int, char**)
 	}
 	catch(const std::exception& e)
 	{
-		// doesnt work :()
-		std::cout << "lol" << std::endl;
 		std::cerr << e.what() << '\n';
 	}
 
