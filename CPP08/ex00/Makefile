@@ -6,22 +6,24 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/27 17:33:13 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/27 17:30:44 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animals
+NAME = easyfind
 
-SRCS = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRCS = main.cpp
+
+HEADER = easyfind.hpp
 
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -pedantic
 
 OBJS = ${SRCS:.cpp=.o}
 
 %.o : %.cpp 
-			${CC} ${CFLAGS} ${HEADER} -c $< -o $@
+			${CC} -c ${CFLAGS} $< -o $@
 
 all:		${NAME}
 
