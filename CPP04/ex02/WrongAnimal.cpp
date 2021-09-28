@@ -23,11 +23,11 @@ WrongAnimal::WrongAnimal(WrongAnimal const &src)
 	*this = src;
 }
 
-WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &src)
 {
 	std::cout << "WrongAnimal Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
+	if(this != &src)
+		this->type = src.type;
 	return *this;
 }
 

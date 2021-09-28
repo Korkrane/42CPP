@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:07:50 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 15:29:55 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 17:03:05 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ Dog::Dog(Dog const &src)
 	*this = src;
 }
 
-Dog &Dog::operator=(Dog const &rhs)
+Dog &Dog::operator=(Dog const &src)
 {
 	std::cout << "Dog Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
+	if(this != &src)
+		this->type = src.type;
 	return *this;
 }
 

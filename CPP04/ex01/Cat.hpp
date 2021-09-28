@@ -22,7 +22,7 @@ class Cat : virtual public Animal
 		Cat(void);
 		~Cat(void);
 		Cat(Cat const &src);
-		Cat &operator=(Cat const &rhs);
+		Cat &operator=(Cat const &src);
 		void makeSound() const;
 		Brain *getBrain();
 	private:

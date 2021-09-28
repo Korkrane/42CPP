@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:38:39 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/22 13:46:02 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 18:25:56 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Cure::Cure() : AMateria("cure")
 Cure::Cure(std::string const & type) : AMateria("cure")
 {
 	std::cout << "Cure constructor called" << std::endl;
+    (void)type;
 }
 
 Cure::Cure(Cure const &src) : AMateria(src)
@@ -30,6 +31,7 @@ Cure::Cure(Cure const &src) : AMateria(src)
 Cure &Cure::operator=(Cure const &src)
 {
 	std::cout << "Cure Assignation operator called" << std::endl;
+    (void)src;
 	return *this;
 }
 

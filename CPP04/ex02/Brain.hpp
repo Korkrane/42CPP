@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:08:24 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 16:07:11 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 17:53:41 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class Brain
 		Brain(void);
 		~Brain(void);
 		Brain(Brain const &src);
-		Brain &operator=(Brain const &rhs);
-		std::string *getIdeas();
+		Brain &operator=(Brain const &src);
+		std::string getIdeas(int i);
+        std::string *getAllIdeas();
 	private:
 		std::string ideas[100];
 };

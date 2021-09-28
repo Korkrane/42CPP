@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:11:04 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 15:32:18 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 17:03:45 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ WrongCat::WrongCat(WrongCat const &src)
 	*this = src;
 }
 
-WrongCat &WrongCat::operator=(WrongCat const &rhs)
+WrongCat &WrongCat::operator=(WrongCat const &src)
 {
 	std::cout << "WrongCat Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
+	if(this != &src)
+		this->type = src.type;
 	return *this;
 }
 

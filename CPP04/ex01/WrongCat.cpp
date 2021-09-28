@@ -24,11 +24,11 @@ WrongCat::WrongCat(WrongCat const &src)
 	*this = src;
 }
 
-WrongCat &WrongCat::operator=(WrongCat const &rhs)
+WrongCat &WrongCat::operator=(WrongCat const &src)
 {
 	std::cout << "WrongCat Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
+	if(this != &src)
+		this->type = src.type;
 	return *this;
 }
 

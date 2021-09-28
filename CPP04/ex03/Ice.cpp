@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:38:38 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/22 13:45:55 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 18:26:37 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Ice::Ice():AMateria("ice")
 Ice::Ice(std::string const & type)
 {
 	std::cout << "Ice constructor called" << std::endl;
+    (void)type;
 }
 
 Ice::Ice(Ice const &src): AMateria(src)
@@ -30,6 +31,7 @@ Ice::Ice(Ice const &src): AMateria(src)
 Ice &Ice::operator=(Ice const &src)
 {
 	std::cout << "Ice Assignation operator called" << std::endl;
+    (void)src;
 	return *this;
 }
 

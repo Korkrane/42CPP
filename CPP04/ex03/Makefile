@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/20 19:35:57 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/28 16:55:44 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,14 @@ NAME = materia
 
 SRCS = Character.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 
-HEADER = Character.hpp AMateria.hpp Cure.hpp Ice.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
-
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall -g
+CFLAGS = -Wextra -Werror -Wall -pedantic -g3
 
 OBJS = ${SRCS:.cpp=.o}
 
-.c.o: 
-			@${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.cpp=.o}
+%.o: %.cpp
+			@${CC} -c ${CFLAGS} ${HEADER} $< -o $@
 
 all:		${NAME}
 

@@ -22,7 +22,7 @@ class Ice : public AMateria
 		Ice(std::string const &type);
 		~Ice(void);
 		Ice(Ice const &src);
-		Ice &operator=(Ice const &rhs);
+		Ice &operator=(Ice const &src);
 
 		AMateria *clone() const;
 		void use(ICharacter &target);

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:07:50 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/20 15:24:17 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 17:02:37 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ Cat::Cat(Cat const &src)
 	*this = src;
 }
 
-Cat &Cat::operator=(Cat const &rhs)
+Cat &Cat::operator=(Cat const &src)
 {
 	std::cout << "Cat Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->type = rhs.type;
+	if(this != &src)
+		this->type = src.type;
 	return *this;
 }
 

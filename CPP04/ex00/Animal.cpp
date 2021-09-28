@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:07:49 by bahaas            #+#    #+#             */
-/*   Updated: 2021/08/09 20:25:47 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 17:02:19 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Animal::Animal(Animal const &src)
 	*this = src;
 }
 
-Animal &Animal::operator=(Animal const &rhs)
+Animal &Animal::operator=(Animal const &src)
 {
 	std::cout << "Animal Assignation operator called" << std::endl;
-	if(this != &rhs)
+	if(this != &src)
 	{
-		this->type = rhs.type;
+		this->type = src.type;
 	}
 	return *this;
 }

@@ -23,12 +23,12 @@ Animal::Animal(Animal const &src)
 	*this = src;
 }
 
-Animal &Animal::operator=(Animal const &rhs)
+Animal &Animal::operator=(Animal const &src)
 {
 	std::cout << "Animal Assignation operator called" << std::endl;
-	if(this != &rhs)
+	if(this != &src)
 	{
-		this->type = rhs.type;
+		this->type = src.type;
 	}
 	return *this;
 }

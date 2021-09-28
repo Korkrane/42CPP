@@ -22,7 +22,7 @@ class Cure : public AMateria
 		Cure(std::string const & type);
 		~Cure(void);
 		Cure(Cure const &src);
-		Cure &operator=(Cure const &rhs);
+		Cure &operator=(Cure const &src);
 
 		AMateria *clone() const;
 		void use(ICharacter &target);
