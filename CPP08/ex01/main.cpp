@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 17:53:11 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/27 21:18:33 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 16:07:17 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,30 +84,31 @@ void basic_add_range_test()
 {
     std::cout << "--- basic_add_range_test ---" << std::endl;
     Span sp = Span(10);
-/*
+    int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
     try
     {
-        sp.addRange(0, 9);
+        sp.addNumbers(arr, 10);
         sp.display();
     }
     catch(std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
-*/
-    int array_int[] = {10, 4 , 6, 32 , 245 , 23, 60, 594, 123, 28};
-    sp.addNumbers(array_int, 10);
-    sp.display();
 }
 
 void basic_add_big_range_test()
 {
     std::cout << "--- basic_add_big_range_test ---" << std::endl;
     Span sp = Span(100000);
+    int arr[100000];
 
+    for(int i = 0; i < 100000; i++)
+        arr[i] = i;
     try
     {
-       // sp.addRange(0, 99999);
+        sp.addNumbers(arr, 100000);
+        //sp.display(); //wanna see a long list ?
     }
     catch(std::exception &e)
     {
@@ -119,25 +120,11 @@ void basic_add_range_exception_test()
 {
     std::cout << "--- basic_add_range_exception_test ---" << std::endl;
     Span sp = Span(10);
+    int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     try
     {
-        //sp.addRange(15, 8);
-    }
-    catch(std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-}
-
-void basic_add_range_partially_test()
-{
-    std::cout << "--- basic_add_range_partially_test ---" << std::endl;
-    Span sp = Span(10);
-
-    try
-    {
-        //sp.addRange(0, 9);
+        sp.addNumbers(arr, 11);
         sp.display();
     }
     catch(std::exception &e)
@@ -161,7 +148,5 @@ int main()
     basic_add_big_range_test();
     std::cout << std::endl;
     basic_add_range_exception_test();
-    std::cout << std::endl;
-    basic_add_range_partially_test();
     std::cout << std::endl;
 }
