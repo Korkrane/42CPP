@@ -35,16 +35,16 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src)
 	*this = src;
 }
 
-Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
 {
 	std::cout << "Bureaucrat Assignation operator called" << std::endl;
-	if(this != &rhs)
+	if(this != &src)
 	{
-		if (rhs.grade < 1)
+		if (src.grade < 1)
 			throw Bureaucrat::GradeTooHighException();
-		if (rhs.grade > 150)
+		if (src.grade > 150)
 			throw Bureaucrat::GradeTooLowException();
-		this->grade = rhs.grade;
+		this->grade = src.grade;
 	}
 	return *this;
 }

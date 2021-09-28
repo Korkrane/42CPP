@@ -26,11 +26,11 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src
 	*this = src;
 }
 
-PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &src)
 {
 	std::cout << "PresidentialPardonForm Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->target = rhs.target;
+	if(this != &src)
+		this->target = src.target;
 	return *this;
 }
 

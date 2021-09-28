@@ -6,13 +6,13 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:43 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 15:46:23 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 19:24:12 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(): gradeSign(0), gradeExecute(0), name("")
+Form::Form(): name(""), gradeSign(0), gradeExecute(0)
 {
 }
 
@@ -33,16 +33,16 @@ Form::Form(Form const &src): name(src.name), gradeSign(src.gradeSign), gradeExec
 		throw Form::GradeTooLowException();
 }
 
-Form &Form::operator=(Form const &rhs)
+Form &Form::operator=(Form const &src)
 {
 	std::cout << "Form Assignation operator called" << std::endl;
-	if(this != &rhs)
+	if(this != &src)
 	{
-		if (rhs.gradeSign < 1 || rhs.gradeSign < 1)
+		if (src.gradeSign < 1 || src.gradeSign < 1)
 			throw Form::GradeTooHighException();
-		if (rhs.gradeSign > 150 || rhs.gradeExecute > 150)
+		if (src.gradeSign > 150 || src.gradeExecute > 150)
 			throw Form::GradeTooLowException();
-		this->isSigned = rhs.isSigned;
+		this->isSigned = src.isSigned;
 	}
 	return *this;
 }

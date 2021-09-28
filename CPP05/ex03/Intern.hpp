@@ -25,7 +25,7 @@ class Intern
 		Intern(void);
 		~Intern(void);
 		Intern(Intern const &src);
-		Intern &operator=(Intern const &rhs);
+		Intern &operator=(Intern const &src);
 		Form *makeForm(std::string formName, std::string target);
 	private:
 		typedef struct	s_form

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:42 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 16:48:27 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 19:21:55 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Bureaucrat
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat(void);
 		Bureaucrat(Bureaucrat const &src);
-		Bureaucrat &operator=(Bureaucrat const &rhs);
+		Bureaucrat &operator=(Bureaucrat const &src);
 
 		int getGrade() const;
 		std::string getName() const;
@@ -50,6 +50,6 @@ class Bureaucrat
 		int grade;
 };
 
-std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs);
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &src);
 
 #endif

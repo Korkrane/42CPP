@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:55:41 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 16:30:30 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 19:19:51 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src)
 	*this = src;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &src)
 {
 	std::cout << "ShrubberyCreationForm Assignation operator called" << std::endl;
-	if(this != &rhs)
-		this->target = rhs.target;
+	if(this != &src)
+		this->target = src.target;
 	return *this;
 }
 
@@ -74,7 +74,7 @@ bool ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw Bureaucrat::GradeTooLowException();
 	std::string fileName = (this->target + "_shrubbery");
 	std::ofstream file;
-	file.open(fileName);
+	file.open(fileName.c_str());
 	file << asciiTree;
 	file.close();
 	return true;

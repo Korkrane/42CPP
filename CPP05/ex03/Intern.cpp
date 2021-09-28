@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 17:01:23 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 17:34:34 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 19:26:03 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ Intern::Intern(Intern const &src)
 	*this = src;
 }
 
-Intern &Intern::operator=(Intern const &rhs)
+Intern &Intern::operator=(Intern const &src)
 {
 	std::cout << "Intern Assignation operator called" << std::endl;
+    (void)src;
 	return *this;
 }
 

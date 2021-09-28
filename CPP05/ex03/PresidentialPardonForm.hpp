@@ -22,7 +22,7 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm(void);
 		PresidentialPardonForm(PresidentialPardonForm const &src);
-		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
+		PresidentialPardonForm &operator=(PresidentialPardonForm const &src);
 		virtual bool execute(Bureaucrat const &executor) const;
 	private:
 		std::string target;

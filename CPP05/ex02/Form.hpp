@@ -23,7 +23,7 @@ class Form
 		Form(std::string name, int sign, int execute);
 		~Form(void);
 		Form(Form const &src);
-		Form &operator=(Form const &rhs);
+		Form &operator=(Form const &src);
 
 		std::string const getName() const;
 		int getGradeSign() const;
@@ -54,5 +54,5 @@ class Form
 		bool isSigned;
 };
 
-std::ostream &operator<<(std::ostream &o, Form const &rhs);
+std::ostream &operator<<(std::ostream &o, Form const &src);
 #endif

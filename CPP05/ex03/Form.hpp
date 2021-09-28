@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:42 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 15:45:14 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 19:51:47 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Form
 	public:
 		Form(void);
 		Form(std::string name, int sign, int execute);
-		~Form(void);
+		virtual ~Form(void);
 		Form(Form const &src);
-		Form &operator=(Form const &rhs);
+		Form &operator=(Form const &src);
 
 		std::string const getName() const;
 		int getGradeSign() const;
@@ -54,5 +54,5 @@ class Form
 		bool isSigned;
 };
 
-std::ostream &operator<<(std::ostream &o, Form const &rhs);
+std::ostream &operator<<(std::ostream &o, Form const &src);
 #endif

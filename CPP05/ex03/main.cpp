@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:57:39 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 17:39:59 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 19:52:44 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void testIntern(std::string const &name, std::string const &target)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 		std::cout << std::endl;
+        delete newForm;
 	}
 }
 int main()
