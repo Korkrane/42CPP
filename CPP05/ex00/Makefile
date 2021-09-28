@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/09 13:58:59 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/28 18:48:51 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,19 @@ NAME = bureaucrat
 
 SRCS = Bureaucrat.cpp main.cpp
 
-HEADER = Bureaucrat.hpp
-
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall -std=c++98
+CFLAGS = -Wextra -Werror -Wall -g3 -pedantic -std=c++98
 
 OBJS = ${SRCS:.cpp=.o}
 
-.c.o: 
-			@${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.cpp=.o}
+%.o : %.cpp 
+			${CC} -c ${CFLAGS} $< -o $@
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 			
 clean:		
 			@rm -rf ${OBJS}

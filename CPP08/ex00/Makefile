@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/27 17:30:44 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/28 18:47:38 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,9 @@ NAME = easyfind
 
 SRCS = main.cpp
 
-HEADER = easyfind.hpp
-
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall -pedantic
+CFLAGS = -Wextra -Werror -Wall -pedantic -g3
 
 OBJS = ${SRCS:.cpp=.o}
 

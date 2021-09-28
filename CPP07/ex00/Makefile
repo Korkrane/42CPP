@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/23 17:43:10 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/28 18:45:54 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,19 @@ NAME = templates
 
 SRCS =  main.cpp
 
-HEADER = Templates.hpp
-
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall -g3 -pedantic -std=c++98
 
 OBJS = ${SRCS:.cpp=.o}
 
-.c.o: 
-			@${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.cpp=.o}
+%.o : %.cpp 
+			${CC} -c ${CFLAGS} $< -o $@
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 			
 clean:		
 			@rm -rf ${OBJS}
