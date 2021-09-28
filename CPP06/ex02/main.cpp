@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 16:43:23 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/23 17:37:00 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 20:06:25 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,29 @@ void identify(Base &p)
 	{
 		A &a = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl << std::endl;
+        (void)a;
 	}
-	catch(std::bad_cast &e)
+	catch(std::exception &e)
 	{}
 	try
 	{
 		B &b = dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl << std::endl;
+        (void)b;
 	}
-	catch(std::bad_cast &e)
+	catch(std::exception &e)
 	{}
 	try
 	{
 		C &c = dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl << std::endl;
+        (void)c;
 	}
-	catch(std::bad_cast &e)
+	catch(std::exception &e)
 	{}
 }
 
-int main(int ac, char **av)
+int main()
 {
 	for(int i = 0; i < 8; i++)
 	{

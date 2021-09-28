@@ -6,11 +6,12 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 16:19:29 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/23 16:40:54 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 20:03:10 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serialization.hpp"
+#include <stdint.h>
 
 uintptr_t serialize(Data *ptr)
 {
@@ -22,7 +23,7 @@ Data *deserialize(uintptr_t raw)
 	return reinterpret_cast<Data *>(raw);
 }
 
-int main(int ac, char **av)
+int main()
 {
 	Data data;
 

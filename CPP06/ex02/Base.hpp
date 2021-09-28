@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 16:45:21 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/23 17:17:22 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/28 20:04:53 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BASE_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 class Base
 {
