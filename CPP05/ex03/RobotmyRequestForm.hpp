@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:48:00 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/28 19:24:30 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/29 12:10:27 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class RobotmyRequestForm : public Form
 	public:
 		RobotmyRequestForm(void);
 		RobotmyRequestForm(std::string target);
-		~RobotmyRequestForm(void);
+		virtual ~RobotmyRequestForm(void);
 		RobotmyRequestForm(RobotmyRequestForm const &src);
 		RobotmyRequestForm &operator=(RobotmyRequestForm const &src);
 		virtual bool execute(Bureaucrat const &executor) const;

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 17:01:23 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 17:12:59 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/29 12:10:11 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Intern
 {
 	public:
 		Intern(void);
-		~Intern(void);
+		virtual ~Intern(void);
 		Intern(Intern const &src);
 		Intern &operator=(Intern const &src);
 		Form *makeForm(std::string formName, std::string target);

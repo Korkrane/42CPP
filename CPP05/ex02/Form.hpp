@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 14:10:42 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 15:45:14 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/29 12:07:39 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Form
 	public:
 		Form(void);
 		Form(std::string name, int sign, int execute);
-		~Form(void);
+		virtual ~Form(void);
 		Form(Form const &src);
 		Form &operator=(Form const &src);
 
@@ -34,18 +34,18 @@ class Form
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				const char *what() const throw();
 		};
 		class NotSignedException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				const char *what() const throw();
 		};
 	private:
 		std::string const name;

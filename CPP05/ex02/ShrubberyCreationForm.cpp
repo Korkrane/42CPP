@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:55:41 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/28 19:19:51 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/29 12:19:25 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ bool ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	file.open(fileName.c_str());
 	file << asciiTree;
 	file.close();
+	std::cout << "File is created" << std::endl;
 	return true;
 }

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:25:33 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 15:44:21 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/29 12:10:19 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PresidentialPardonForm : public Form
 	public:
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(std::string target);
-		~PresidentialPardonForm(void);
+		virtual ~PresidentialPardonForm(void);
 		PresidentialPardonForm(PresidentialPardonForm const &src);
 		PresidentialPardonForm &operator=(PresidentialPardonForm const &src);
 		virtual bool execute(Bureaucrat const &executor) const;

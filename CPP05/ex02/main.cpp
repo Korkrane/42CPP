@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 13:57:39 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/15 16:58:35 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/29 12:26:23 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void testShrubbery(std::string const &bureaucratName, int grade, std::string con
 {
 	try
 	{
+		std::cout << "---" << bureaucratName << "'s test" << "---" << std::endl;
 		Bureaucrat bureaucrat(bureaucratName, grade);
 		ShrubberyCreationForm form(target);
 
@@ -120,7 +121,7 @@ int main()
 	std::cout << "--- ShrubberyCreation ---" << std::endl;
 	testShrubbery("bureaucrat1", 1, "test1");
 	testShrubbery("bureaucrat2", 150, "test2");
-	testShrubbery("bureaucrat3", 42, "test3");
+	testShrubbery("bureaucrat3", 8, "test3");
 	testShrubbery("bureaucrat4", -42, "test4");
 	testShrubbery("bureaucrat5", 146, "test5");
 
