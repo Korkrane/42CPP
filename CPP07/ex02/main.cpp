@@ -6,19 +6,19 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:25:58 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/27 15:22:55 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/30 12:33:58 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
-#define MAX_VAL 10
 
 int main(int, char**)
 {
+	unsigned int MAX_VAL = 10;
 	Array<int> numbers(MAX_VAL);
 	int* mirror = new int[MAX_VAL];
 	srand(time(NULL));
-	for (int i = 0; i < MAX_VAL; i++)
+	for (unsigned int i = 0; i < MAX_VAL; i++)
 	{
 		const int value = rand();
 		numbers[i] = value;
@@ -27,7 +27,7 @@ int main(int, char**)
 	Array<int> tmp = numbers;
 	Array<int> test(tmp);
 
-	for (int i = 0; i < MAX_VAL; i++)
+	for (unsigned int i = 0; i < MAX_VAL; i++)
 	{
 		std::cout << i << " numbers: " << numbers[i] << " mirror:" << mirror[i] << " tmp:" << tmp[i] << " test: " << test[i] << std::endl;
 		if (mirror[i] != numbers[i])
@@ -40,7 +40,7 @@ int main(int, char**)
 
     std::cout << "--- Check array affect after assignation test & numbers and +1 ---" << std::endl;
     test = numbers; 
-	for (int i = 0; i < MAX_VAL; i++)
+	for (unsigned int i = 0; i < MAX_VAL; i++)
 	{
         test[i] += 1;
 		std::cout << i << " numbers: " << numbers[i] << " test: " << test[i] << std::endl;
@@ -48,7 +48,7 @@ int main(int, char**)
 
 
     std::cout << "--- Check array affect after test modification ---" << std::endl;
-	for (int i = 0; i < MAX_VAL; i++)
+	for (unsigned int i = 0; i < MAX_VAL; i++)
 	{
         test[i] = 42;
 		std::cout << i << " tmp: " << tmp[i] << " test: " << test[i] << std::endl;
@@ -70,9 +70,10 @@ int main(int, char**)
 		std::cerr << e.what() << '\n';
 	}
 
-	for (int i = 0; i < MAX_VAL; i++)
+	for (unsigned int i = 0; i < MAX_VAL; i++)
 	{
 		numbers[i] = rand();
+		std::cout << i << " numbers: " << numbers[i] << " mirror: " << mirror[i] << std::endl;
 	}
 	delete [] mirror;//
 	return 0;
