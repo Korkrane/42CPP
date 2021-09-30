@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 16:08:38 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/28 16:47:18 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/30 16:03:02 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int mutant_stack_test()
 
     std::cout << "Current top element: " << mstack.top() << std::endl;
     mstack.pop();
+    std::cout << "Current top element: " << mstack.top() << std::endl;
     std::cout << "Current stack size: " << mstack.size() << std::endl;
 
     mstack.push(3);
@@ -56,6 +57,7 @@ int list_test()
 
     std::cout << "Current top element: " << mstack.back() << std::endl;
     mstack.pop_back();
+    std::cout << "Current top element: " << mstack.back() << std::endl;
     std::cout << "Current stack size: " << mstack.size() << std::endl;
 
     mstack.push_back(3);
@@ -68,7 +70,7 @@ int list_test()
 
     ++it;
     --it;
-    std::cout << "Iteration of our stack (begin to end): " << std::endl;
+    std::cout << "Iteration of our list (begin to end): " << std::endl;
     while (it != ite)
     {
         std::cout << *it << std::endl;

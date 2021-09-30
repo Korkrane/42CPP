@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 17:37:00 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/27 21:16:53 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/30 14:51:05 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Span
     public:
         Span(void);
         Span(unsigned int n);
-        ~Span(void);
+        virtual ~Span(void);
         Span(Span const &src);
         Span &operator=(Span const &src);
 

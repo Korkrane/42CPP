@@ -6,7 +6,7 @@
 #    By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 19:25:36 by bahaas            #+#    #+#              #
-#    Updated: 2021/09/28 16:29:43 by bahaas           ###   ########.fr        #
+#    Updated: 2021/09/30 14:58:32 by bahaas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.cpp mutantstack.cpp
 
 CC = clang++
 
-CFLAGS = -Wextra -Werror -Wall -pedantic -g3
+CFLAGS = -Wextra -Werror -Wall -pedantic -g3 -std=c++98
 
 OBJS = ${SRCS:.cpp=.o}
 

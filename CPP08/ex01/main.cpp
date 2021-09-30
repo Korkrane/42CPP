@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 17:53:11 by bahaas            #+#    #+#             */
-/*   Updated: 2021/09/28 16:07:17 by bahaas           ###   ########.fr       */
+/*   Updated: 2021/09/30 14:57:55 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void basic_positive_test()
     sp.addNumber(9);
     sp.addNumber(11);
 
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    std::cout << sp.shortestSpan() << std::endl; //5 - 3
+    std::cout << sp.longestSpan() << std::endl;// 17 - 3
 }
 
 void basic_negative_test()
@@ -38,8 +38,8 @@ void basic_negative_test()
     sp.addNumber(-8);
     sp.addNumber(11);
 
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    std::cout << sp.shortestSpan() << std::endl; //-4 - -8
+    std::cout << sp.longestSpan() << std::endl;// 17 - -8
 }
 
 void basic_memory_exception_test()
@@ -55,7 +55,7 @@ void basic_memory_exception_test()
     
     try
     {
-        sp.addNumber(42);
+        sp.addNumber(42); //no more space
     }
     catch(std::exception &e)
     {
@@ -71,7 +71,7 @@ void basic_elements_exception_test()
     sp.addNumber(42);
     try
     {
-        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.shortestSpan() << std::endl; //can't find it with 1 element
         std::cout << sp.longestSpan() << std::endl;
     }
     catch(std::exception &e)
@@ -124,7 +124,7 @@ void basic_add_range_exception_test()
 
     try
     {
-        sp.addNumbers(arr, 11);
+        sp.addNumbers(arr, 11); //add 11 elements with space of 10
         sp.display();
     }
     catch(std::exception &e)
